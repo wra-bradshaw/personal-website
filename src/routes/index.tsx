@@ -10,12 +10,13 @@ import {
 } from "#/components/ui/card";
 import { things } from "#/other-things";
 import { Highlight } from "#/components/Highlight";
+import { Container } from "#/components/Container";
 
 export const Route = createFileRoute("/")({ component: HomePage });
 
 function HomePage() {
   return (
-    <article className="max-w-lg mx-auto p-8 lg:mt-12 text-gray-600 dark:text-gray-300 ">
+    <Container>
       <div className="inset-text text-xl leading-relaxed">
         <p>
           <Highlight>William Bradshaw</Highlight> is:
@@ -65,6 +66,6 @@ function HomePage() {
           </a>
         ))}
       </div>
-    </article>
+    </Container>
   );
 }
