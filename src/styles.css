@@ -26,10 +26,12 @@
 }
 
 @theme {
-  --background-image-dark: url("/dark.avif");
-  --background-image-light: url("/light.avif");
+  --background-image-dark-paper: url("/dark.avif");
+  --background-image-light-paper: url("/light.avif");
   --font-junction: "Junction", sans-serif;
   --font-sans: "Junction", sans-serif;
+  --color-light: var(--color-gray-300);
+  --color-dark: var(--color-gray-600);
   --color-bg-light: #f5f5f5;
   --color-bg-dark: #28282a;
 }

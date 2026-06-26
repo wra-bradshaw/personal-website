@@ -46,12 +46,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className="bg-light bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark"
+      className="bg-light-paper bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark-paper"
     >
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-[110lvh] bg-light bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark">
+      <body className="min-h-[110lvh] bg-light-paper bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark-paper">
         {children}
         <TanStackDevtools
           config={{
