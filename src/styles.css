@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: "Junction";
+  src: url("/Junction-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junction";
+  src: url("/Junction-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junction";
+  src: url("/Junction-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --background-image-dark: url("/dark.avif");
+  --background-image-light: url("/light.avif");
+  --font-junction: "Junction", sans-serif;
+  --font-sans: "Junction", sans-serif;
+  --color-bg-light: #f5f5f5;
+  --color-bg-dark: #28282a;
+}
+
+@utility inset-text {
+  @apply text-gray-700 mix-blend-multiply [text-shadow:0_1px_0_rgba(255,255,255,0.75),0_-1px_0_rgba(0,0,0,0.12)];
+
+  @variant dark {
+    @apply text-gray-300 mix-blend-screen [text-shadow:0_1px_0_rgba(255,255,255,0.08),0_-1px_0_rgba(0,0,0,0.65)];
+  }
+}
+
+@utility inset-text-highlight {
+  @apply text-gray-950 mix-blend-multiply [text-shadow:0_1px_0_rgba(255,255,255,0.85),0_-1px_0_rgba(0,0,0,0.16)];
+
+  @variant dark {
+    @apply text-white mix-blend-screen [text-shadow:0_1px_0_rgba(255,255,255,0.1),0_-1px_0_rgba(0,0,0,0.75)];
+  }
+}
+
+@utility inset-underline {
+  @apply underline decoration-dotted decoration-1 underline-offset-3;
+  text-decoration-color: rgba(75, 85, 99, 1);
+
+  @variant dark {
+    text-decoration-color: rgba(255, 255, 255, 1);
+  }
+}
+
+@utility prose-inset {
+  --tw-prose-body: currentColor;
+  --tw-prose-headings: currentColor;
+  --tw-prose-lead: currentColor;
+  --tw-prose-links: currentColor;
+  --tw-prose-bold: currentColor;
+  --tw-prose-counters: currentColor;
+  --tw-prose-bullets: currentColor;
+  --tw-prose-hr: color-mix(in srgb, currentColor 25%, transparent);
+  --tw-prose-quotes: currentColor;
+  --tw-prose-quote-borders: color-mix(in srgb, currentColor 25%, transparent);
+  --tw-prose-captions: currentColor;
+  --tw-prose-kbd: currentColor;
+  --tw-prose-kbd-shadows: currentColor;
+  --tw-prose-code: currentColor;
+  --tw-prose-th-borders: color-mix(in srgb, currentColor 25%, transparent);
+  --tw-prose-td-borders: color-mix(in srgb, currentColor 15%, transparent);
+  --tw-prose-invert-body: currentColor;
+  --tw-prose-invert-headings: currentColor;
+  --tw-prose-invert-lead: currentColor;
+  --tw-prose-invert-links: currentColor;
+  --tw-prose-invert-bold: currentColor;
+  --tw-prose-invert-counters: currentColor;
+  --tw-prose-invert-bullets: currentColor;
+  --tw-prose-invert-hr: color-mix(in srgb, currentColor 25%, transparent);
+  --tw-prose-invert-quotes: currentColor;
+  --tw-prose-invert-quote-borders: color-mix(
+    in srgb,
+    currentColor 25%,
+    transparent
+  );
+  --tw-prose-invert-captions: currentColor;
+  --tw-prose-invert-kbd: currentColor;
+  --tw-prose-invert-kbd-shadows: currentColor;
+  --tw-prose-invert-code: currentColor;
+  --tw-prose-invert-th-borders: color-mix(
+    in srgb,
+    currentColor 25%,
+    transparent
+  );
+  --tw-prose-invert-td-borders: color-mix(
+    in srgb,
+    currentColor 15%,
+    transparent
+  );
+
+  :where(h1, h2, h3, h4, h5, h6, strong) {
+    @apply inset-text-highlight;
+  }
+
+  :where(p, li, blockquote, figcaption, th, td, code):not(pre code) {
+    @apply inset-text;
+  }
+
+  :where(img, picture, video, canvas, svg) {
+    @apply mix-blend-normal [text-shadow:none];
+  }
+
+  a {
+    @apply inset-text inset-underline inline-block hover:inset-text-highlight;
+  }
+}
