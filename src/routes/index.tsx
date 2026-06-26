@@ -52,7 +52,11 @@ function HomePage() {
       </div>
       <div className="space-y-4">
         {things.map((thing) => (
-          <a key={thing.slug} className="" href={`/other-things/${thing.slug}`}>
+          <a
+            key={thing.slug}
+            className="block"
+            href={`/other-things/${thing.slug}`}
+          >
             <Card>
               <CardContent className="space-y-3">
                 <div className="space-y-2">
