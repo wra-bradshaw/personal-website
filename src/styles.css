@@ -122,8 +122,4 @@
   :where(img, picture, video, canvas, svg) {
     @apply mix-blend-normal [text-shadow:none];
   }
-
-  a {
-    @apply inset-text inset-underline inline-block hover:inset-text-highlight;
-  }
 }
