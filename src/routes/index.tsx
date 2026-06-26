@@ -11,6 +11,7 @@ import {
 import { things } from "#/other-things";
 import { Highlight } from "#/components/Highlight";
 import { Container } from "#/components/Container";
+import { FocusRing } from "#/components/FocusRing";
 
 export const Route = createFileRoute("/")({ component: HomePage });
 
@@ -52,9 +53,10 @@ function HomePage() {
       </div>
       <div className="space-y-4">
         {things.map((thing) => (
-          <a
+          <FocusRing
+            as="a"
             key={thing.slug}
-            className="block"
+            className="block rounded-xl"
             href={`/other-things/${thing.slug}`}
           >
             <Card>
@@ -67,7 +69,7 @@ function HomePage() {
                 </div>
               </CardContent>
             </Card>
-          </a>
+          </FocusRing>
         ))}
       </div>
     </Container>
