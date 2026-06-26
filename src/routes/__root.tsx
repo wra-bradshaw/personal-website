@@ -12,7 +12,7 @@ export const Route = createRootRoute({
       },
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1",
+        content: "width=device-width, initial-scale=1, viewport-fit=cover",
       },
       {
         name: "theme-color",
@@ -51,7 +51,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-[110lvh] bg-light-paper bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark-paper">
+      <body className="pt-safe-top pl-safe-left pb-safe-bottom pr-safe-right min-h-[110lvh] bg-light-paper bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark-paper">
         {children}
         <TanStackDevtools
           config={{
