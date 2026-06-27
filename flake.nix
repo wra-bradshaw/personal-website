@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    systems.url = "systems";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    systems.url = "github:nix-systems/default";
   };
 
   outputs =
@@ -14,6 +14,16 @@
       forEachSystem = nixpkgs.lib.genAttrs (import systems);
     in
     {
+      packages = forEachSystem (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        {
+          default = pkgs.callPackage ./package.nix { };
+        }
+      );
+
       devShells = forEachSystem (
         system:
         let
