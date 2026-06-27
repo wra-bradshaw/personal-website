@@ -80,7 +80,7 @@ export const Route = createRootRoute({
         },
         {
           rel: "preload",
-          href: "/fonts/Junction-Regular.woff2",
+          href: "/Junction-regular.woff2",
           as: "font",
           type: "font/woff2",
           crossOrigin: "anonymous",
