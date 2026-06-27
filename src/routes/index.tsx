@@ -36,18 +36,18 @@ function HomePage() {
         </p>
         <DashList>
           <li className="mb-1">
-            <FocusLink href="https://www.linkedin.com/in/wra-bradshaw">
+            <FocusLink to="https://www.linkedin.com/in/wra-bradshaw">
               LinkedIn
             </FocusLink>
           </li>
           <li className="mb-1">
-            <FocusLink href="https://google.com">My resume</FocusLink>
+            <FocusLink to="https://google.com">My resume</FocusLink>
           </li>
           <li className="mb-1">
-            <FocusLink href="mailto:will.bradshaw50@gmail.com">Email</FocusLink>
+            <FocusLink to="mailto:will.bradshaw50@gmail.com">Email</FocusLink>
           </li>
           <li className="mb-1">
-            <FocusLink href="https://github.com/wra-bradshaw">GitHub</FocusLink>
+            <FocusLink to="https://github.com/wra-bradshaw">GitHub</FocusLink>
           </li>
         </DashList>
         <p className="mb-1">Other things:</p>
