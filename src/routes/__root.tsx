@@ -65,10 +65,18 @@ export const Route = createRootRoute({
         {
           rel: "preload",
           href: "/dark.avif",
+          as: "image",
+          type: "image/avif",
+          media: "(prefers-color-scheme: dark)",
+          fetchPriority: "high",
         },
         {
           rel: "preload",
           href: "/light.avif",
+          as: "image",
+          type: "image/avif",
+          media: "(prefers-color-scheme: light)",
+          fetchPriority: "high",
         },
       ],
     };
