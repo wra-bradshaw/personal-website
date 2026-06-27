@@ -18,16 +18,4 @@ export const things: OtherThing[] = [
     description: description ?? undefined,
     body: body,
   },
-  {
-    slug: "containerisation-on-macos",
-    title: title ?? undefined,
-    description: description ?? undefined,
-    body: body,
-  },
-  {
-    slug: "containerisation-on-macos",
-    title: title ?? undefined,
-    description: description ?? undefined,
-    body: body,
-  },
 ];
