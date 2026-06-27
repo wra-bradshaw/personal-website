@@ -1,8 +1,17 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import type { AnyRouteMatch } from "@tanstack/react-router";
 
 import { FocusLink } from "#/components/FocusLink";
 import { things } from "#/other-things";
 import { Container } from "#/components/Container";
+import { canonicalUrl } from "#/lib/utils";
+
+type HeadResult = {
+  links?: AnyRouteMatch["links"];
+  scripts?: AnyRouteMatch["headScripts"];
+  meta?: AnyRouteMatch["meta"];
+  styles?: AnyRouteMatch["styles"];
+};
 
 export const Route = createFileRoute("/other-things/$slug")({
   component: OtherThingPage,
@@ -14,6 +23,25 @@ export const Route = createFileRoute("/other-things/$slug")({
     }
 
     return { thing };
+  },
+  head: ({ params, loaderData }) => {
+    const obj: HeadResult = {};
+
+    if (loaderData) {
+      obj.meta = [
+        {
+          title: `${loaderData.thing.title} | Posts | William Bradshaw`,
+        },
+        {
+          name: "description",
+          content: loaderData.thing.description,
+        },
+        { property: "og:title", content: loaderData.thing.title },
+        { property: "og:description", content: loaderData.thing.description },
+      ];
+    }
+
+    return obj;
   },
 });
 
