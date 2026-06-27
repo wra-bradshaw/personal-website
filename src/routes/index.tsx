@@ -41,7 +41,9 @@ function HomePage() {
             </FocusLink>
           </li>
           <li className="mb-1">
-            <FocusLink to="https://google.com">My resume</FocusLink>
+            <FocusLink as="a" href="/resume.pdf">
+              My resume
+            </FocusLink>
           </li>
           <li className="mb-1">
             <FocusLink to="mailto:will.bradshaw50@gmail.com">Email</FocusLink>
