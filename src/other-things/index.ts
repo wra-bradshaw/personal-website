@@ -1,9 +1,3 @@
-import {
-  title,
-  description,
-  body,
-} from "src/other-things/containerisation_on_macos.typ?parts";
-
 export type OtherThing = {
   slug: string;
   title?: string;
@@ -11,11 +5,16 @@ export type OtherThing = {
   body: string;
 };
 
-export const things: OtherThing[] = [
-  {
-    slug: "containerisation-on-macos",
-    title: title ?? undefined,
-    description: description ?? undefined,
-    body: body,
-  },
-];
+const typstModules = import.meta.glob<{
+  title: string | null;
+  description: string | null;
+  body: string;
+  frontmatter: { slug: string };
+}>("./*.typ", { query: "?parts", eager: true });
+
+export const things: OtherThing[] = Object.values(typstModules).map((mod) => ({
+  slug: mod.frontmatter.slug,
+  title: mod.title ?? undefined,
+  description: mod.description ?? undefined,
+  body: mod.body,
+}));

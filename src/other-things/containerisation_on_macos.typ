@@ -1,5 +1,9 @@
 #import html
 
+#metadata((
+  slug: "containerisation-on-macos",
+)) <frontmatter>
+
 #set document(
   title: "Containerisation on macOS",
   description: "Containers on macOS are a bit of a mixed bag of proprietary solutions with restrictive licenses, and trickier open source solutions. Last year, I worked to improve the landscape for Nix users on macOS.",
