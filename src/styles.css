@@ -28,6 +28,20 @@
 @theme {
   --background-image-dark-paper: url("/dark.avif");
   --background-image-light-paper: url("/light.avif");
+  --fade-light: linear-gradient(
+    to bottom,
+    var(--color-bg-light) 0 10px,
+    transparent 80px,
+    transparent calc(100% - 80px),
+    var(--color-bg-light) calc(100% - 10px) 100%
+  );
+  --fade-dark: linear-gradient(
+    to bottom,
+    var(--color-bg-dark) 0 0,
+    transparent 50px,
+    transparent calc(100% - 50px),
+    var(--color-bg-dark) 100% 100%
+  );
   --font-junction: "Junction", sans-serif;
   --font-sans: "Junction", sans-serif;
   --color-light: var(--color-gray-300);

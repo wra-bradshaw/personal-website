@@ -74,14 +74,11 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className="bg-light-paper bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark-paper"
-    >
+    <html lang="en" className="">
       <head>
         <HeadContent />
       </head>
-      <body className="pt-safe-top pl-safe-left pb-safe-bottom pr-safe-right min-h-[110lvh] bg-light-paper bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px] dark:bg-dark-paper">
+      <body className="pt-safe-top pl-safe-left pb-safe-bottom pr-safe-right min-h-[110lvh] bg-[image:var(--fade-light),var(--background-image-light-paper)] dark:bg-[image:var(--fade-dark),var(--background-image-dark-paper)] bg-bg-light dark:bg-bg-dark bg-left-top bg-repeat bg-[length:200px]">
         {children}
         <TanStackDevtools
           config={{
