@@ -29,6 +29,7 @@ const config = defineConfig(({ mode }) => {
           enabled: true,
           autoStaticPathsDiscovery: true,
           crawlLinks: true,
+          filter: (page) => !page.path.endsWith(".pdf"),
         },
         sitemap: {
           enabled: true,
