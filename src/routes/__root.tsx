@@ -78,6 +78,13 @@ export const Route = createRootRoute({
           media: "(prefers-color-scheme: light)",
           fetchPriority: "high",
         },
+        {
+          rel: "preload",
+          href: "/fonts/Junction-Regular.woff2",
+          as: "font",
+          type: "font/woff2",
+          crossOrigin: "anonymous",
+        },
       ],
     };
   },
