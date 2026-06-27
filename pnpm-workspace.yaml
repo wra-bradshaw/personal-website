@@ -5,3 +5,5 @@ trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200
 allowBuilds:
   esbuild: true
+  sharp: true
+  workerd: true

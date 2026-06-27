@@ -1,12 +1,12 @@
 import { defineConfig, loadEnv } from "vite";
 import { devtools } from "@tanstack/devtools-vite";
 import typst from "@myriaddreamin/vite-plugin-typst";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { nitro } from "nitro/vite";
 
 const config = defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "VITE_");
@@ -20,13 +20,14 @@ const config = defineConfig(({ mode }) => {
   return {
     resolve: { tsconfigPaths: true },
     plugins: [
+      cloudflare({ viteEnvironment: { name: "ssr" } }),
       typst(),
       devtools(),
-      nitro({ rollupConfig: { external: [/^@sentry\//] } }),
       tailwindcss(),
       tanstackStart({
         prerender: {
           enabled: true,
+          autoStaticPathsDiscovery: true,
           crawlLinks: true,
         },
         sitemap: {
