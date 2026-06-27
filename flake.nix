@@ -27,7 +27,10 @@
       devShells = forEachSystem (
         system:
         let
-          pkgs = import nixpkgs { inherit system; };
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
         in
         {
           default = pkgs.mkShell {
@@ -38,6 +41,7 @@
               pkgs.woff2
               pkgs.typst
               pkgs.cavif
+              pkgs.antigravity-cli
             ];
 
             shellHook = "";
