@@ -1,9 +1,6 @@
 import { defineConfig, loadEnv } from "vite";
 import { devtools } from "@tanstack/devtools-vite";
-import {
-  TypstPlugin,
-  checkExecResult,
-} from "@myriaddreamin/vite-plugin-typst";
+import { TypstPlugin, checkExecResult } from "@myriaddreamin/vite-plugin-typst";
 import { cloudflare } from "@cloudflare/vite-plugin";
 
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
@@ -29,11 +26,7 @@ const config = defineConfig(({ mode }) => {
       cloudflare({ viteEnvironment: { name: "ssr" } }),
       TypstPlugin({
         onResolveParts: (input, project, ctx) => {
-          const res = checkExecResult(
-            input,
-            project.compileHtml(input),
-            ctx,
-          );
+          const res = checkExecResult(input, project.compileHtml(input), ctx);
           return {
             frontmatter:
               res &&
