@@ -66,6 +66,14 @@ export const Route = createRootRoute({
           rel: "manifest",
           href: "/manifest.json",
         },
+        {
+          rel: "preload",
+          href: "/dark.avif",
+        },
+        {
+          rel: "preload",
+          href: "/light.avif",
+        },
       ],
     };
   },
@@ -74,7 +82,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
