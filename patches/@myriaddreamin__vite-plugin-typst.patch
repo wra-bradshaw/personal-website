@@ -1,0 +1,78 @@
+diff --git a/dist/index.js b/dist/index.js
+index 50dcc7a7067610ad4e9f5261b47e9fa886106ae6..6b9e2d47365732d38a91686d5f151f1e446f10de 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -41,11 +41,18 @@ export async function TypstPlugin(options = {}) {
+             if (memoryHtml) {
+                 return memoryHtml;
+             }
+-            let isJs = id.endsWith(suffixJs);
++            // Split query string from the id before checking suffix
++            const queryIdx = id.indexOf('?');
++            const idPath = queryIdx >= 0 ? id.slice(0, queryIdx) : id;
++            const queryStr = queryIdx >= 0 ? id.slice(queryIdx + 1) : '';
++            let isJs = idPath.endsWith(suffixJs);
+             if (!isJs)
+                 return null;
+-            id = id.slice(0, -suffixJs.length);
+-            const { path, attributes } = extractOpts(id);
++            const path = idPath.slice(0, -suffixJs.length);
++            const attributes = {};
++            for (const part of queryStr.split('&')) {
++                if (part) attributes[part] = true;
++            }
+             const input = { mainFilePath: path };
+             // todo: cache js import
+             this.addWatchFile(path);
+@@ -80,14 +87,22 @@ export default parts;`;
+             }
+             return `export default ${JSON.stringify(result.result.html())}`;
+         },
+-        resolveId(source) {
+-            const { path, attributes } = extractOpts(source);
+-            if (!path.endsWith('.typ'))
++        resolveId(source, importer) {
++            const { path: typPath, attributes } = extractOpts(source);
++            if (!typPath.endsWith('.typ'))
+                 return null;
++            // Resolve relative paths against the importer's directory
++            let resolvedPath = typPath;
++            if (importer && !path.isAbsolute(typPath)) {
++                resolvedPath = path.resolve(path.dirname(importer), typPath);
++            }
+             if (attributes.html || attributes.parts) {
+-                return source + suffixJs;
++                const queryParts = [];
++                if (attributes.html) queryParts.push('html');
++                if (attributes.parts) queryParts.push('parts');
++                return resolvedPath + suffixJs + '?' + queryParts.join('&');
+             }
+-            return provider.resolveRel(path);
++            return provider.resolveRel(typPath);
+         },
+         config(conf) {
+             viteReload(conf);
+@@ -127,6 +142,23 @@ export default parts;`;
+                 next();
+             });
+         },
++        hotUpdate({ file, modules }) {
++            if (!file.endsWith('.typ')) return;
++            // If addWatchFile already found affected modules, use them
++            if (modules.length > 0) return modules;
++            // Otherwise, search the module graph for virtual modules derived from this .typ file
++            const moduleGraph = this.environment.moduleGraph;
++            const affectedModules = [];
++            for (const query of ['parts', 'html']) {
++                const virtualId = file + suffixJs + '?' + query;
++                const mod = moduleGraph.getModuleById(virtualId);
++                if (mod) {
++                    moduleGraph.invalidateModule(mod);
++                    affectedModules.push(mod);
++                }
++            }
++            if (affectedModules.length > 0) return affectedModules;
++        },
+     });
+     function viteReload(conf) {
+         provider.inputRoot = path.resolve(conf.root ?? '.');
