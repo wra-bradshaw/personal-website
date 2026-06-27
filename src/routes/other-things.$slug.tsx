@@ -49,7 +49,7 @@ function OtherThingPage() {
   const { thing } = Route.useLoaderData();
 
   return (
-    <Container>
+    <Container role="main">
       <p className="mb-8">
         <FocusLink href="/">Back</FocusLink>
       </p>

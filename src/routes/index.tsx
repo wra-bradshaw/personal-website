@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({ component: HomePage });
 
 function HomePage() {
   return (
-    <Container>
+    <Container role="main">
       <div className="inset-text text-xl leading-relaxed">
         <p>
           <Highlight>William Bradshaw</Highlight> is:
