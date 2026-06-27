@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 
 import { DashList, DashListItem } from "#/components/DashList";
-import { Link } from "#/components/Link";
+import { FocusLink } from "#/components/FocusLink";
 import {
   Card,
   CardContent,
@@ -35,18 +36,18 @@ function HomePage() {
         </p>
         <DashList>
           <li className="mb-1">
-            <Link href="https://www.linkedin.com/in/wra-bradshaw">
+            <FocusLink href="https://www.linkedin.com/in/wra-bradshaw">
               LinkedIn
-            </Link>
+            </FocusLink>
           </li>
           <li className="mb-1">
-            <Link href="https://google.com">My resume</Link>
+            <FocusLink href="https://google.com">My resume</FocusLink>
           </li>
           <li className="mb-1">
-            <Link href="mailto:will.bradshaw50@gmail.com">Email</Link>
+            <FocusLink href="mailto:will.bradshaw50@gmail.com">Email</FocusLink>
           </li>
           <li className="mb-1">
-            <Link href="https://github.com/wra-bradshaw">GitHub</Link>
+            <FocusLink href="https://github.com/wra-bradshaw">GitHub</FocusLink>
           </li>
         </DashList>
         <p className="mb-1">Other things:</p>
@@ -54,10 +55,10 @@ function HomePage() {
       <div className="space-y-4">
         {things.map((thing) => (
           <FocusRing
-            as="a"
+            as={Link}
             key={thing.slug}
             className="block rounded-xl"
-            href={`/other-things/${thing.slug}`}
+            to={`/other-things/${thing.slug}`}
           >
             <Card>
               <CardContent className="space-y-3">
