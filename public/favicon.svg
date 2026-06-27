@@ -1,17 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><style>
-    #light-icon {
-      display: inline;
-    }
-    #dark-icon {
-      display: none;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      #light-icon {
-        display: none;
-      }
-      #dark-icon {
-        display: inline;
-      }
-    }
-  </style><g id="light-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g><g transform="matrix(3.90625,0,0,3.90625,0,0)"><svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><title>Frame</title><path fill="transparent" d="M0 0h256v256H0z"></path><path d="M56.88 171 87.12 64.08l.54-3.24.54 3.24L118.8 171h13.14l39.24-138.6H154.8l-29.16 110.16-.36 2.16-.36-2.16L96.12 32.4H79.38l-28.8 109.8-.36 2.16-.36-2.16L20.7 32.4H4.5L43.74 171z" style="fill:#000" transform="translate(40 26)"></path></svg></g></g></svg></g><g id="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g><g transform="matrix(3.90625,0,0,3.90625,0,0)"><svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><title>Frame</title><path fill="transparent" d="M0 0h256v256H0z"></path><path d="M56.88 171 87.12 64.08l.54-3.24.54 3.24L118.8 171h13.14l39.24-138.6H154.8l-29.16 110.16-.36 2.16-.36-2.16L96.12 32.4H79.38l-28.8 109.8-.36 2.16-.36-2.16L20.7 32.4H4.5L43.74 171z" style="fill:#fff" transform="translate(40 26)"></path></svg></g></g></svg></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <style>
+    path{fill:#000}
+    @media(prefers-color-scheme:dark){path{fill:#fff}}
+  </style>
+  <path transform="translate(40 26)" d="M56.88 171 87.12 64.08l.54-3.24.54 3.24L118.8 171h13.14l39.24-138.6H154.8l-29.16 110.16-.36 2.16-.36-2.16L96.12 32.4H79.38l-28.8 109.8-.36 2.16-.36-2.16L20.7 32.4H4.5L43.74 171z"/>
+</svg>
