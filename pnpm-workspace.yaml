@@ -8,4 +8,4 @@ allowBuilds:
   sharp: true
   workerd: true
 patchedDependencies:
-  '@myriaddreamin/vite-plugin-typst': patches/@myriaddreamin__vite-plugin-typst.patch
+  "@myriaddreamin/vite-plugin-typst": patches/@myriaddreamin__vite-plugin-typst.patch
