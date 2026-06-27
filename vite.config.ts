@@ -40,6 +40,11 @@ const config = defineConfig(({ mode }) => {
       devtools(),
       tailwindcss(),
       tanstackStart({
+        server: {
+          build: {
+            inlineCss: true,
+          },
+        },
         prerender: {
           enabled: true,
           autoStaticPathsDiscovery: true,

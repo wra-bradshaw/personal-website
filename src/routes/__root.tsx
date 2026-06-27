@@ -4,7 +4,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
 import { canonicalUrl } from "#/lib/utils";
 
-import appCss from "../styles.css?url";
+import "../styles.css";
 
 export const Route = createRootRoute({
   head: ({ matches }) => {
@@ -46,10 +46,6 @@ export const Route = createRootRoute({
         {
           rel: "canonical",
           href: canonicalUrl(pathname),
-        },
-        {
-          rel: "stylesheet",
-          href: appCss,
         },
         {
           rel: "apple-touch-icon",
