@@ -5,6 +5,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { canonicalUrl } from "#/lib/utils";
 
 import "../styles.css";
+import junctionUrl from "../assets/Junction-regular.woff2?url";
 
 export const Route = createRootRoute({
   head: ({ matches }) => {
@@ -80,7 +81,7 @@ export const Route = createRootRoute({
         },
         {
           rel: "preload",
-          href: "/Junction-regular.woff2",
+          href: junctionUrl,
           as: "font",
           type: "font/woff2",
           crossOrigin: "anonymous",
