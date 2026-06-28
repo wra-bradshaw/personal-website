@@ -3,9 +3,8 @@ import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
 import { canonicalUrl } from "#/lib/utils";
-
-import "../styles.css";
 import junctionUrl from "../assets/Junction-regular.woff2?url";
+import stylesUrl from "../styles.css?url";
 
 export const Route = createRootRoute({
   head: ({ matches }) => {
@@ -62,6 +61,10 @@ export const Route = createRootRoute({
         {
           rel: "manifest",
           href: "/manifest.json",
+        },
+        {
+          rel: "stylesheet",
+          href: stylesUrl,
         },
         {
           rel: "preload",
