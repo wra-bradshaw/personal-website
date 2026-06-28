@@ -6,7 +6,7 @@
   src: url("./assets/Junction-light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -14,7 +14,7 @@
   src: url("./assets/Junction-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   src: url("./assets/Junction-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @theme {
