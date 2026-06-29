@@ -70,7 +70,7 @@ export const Route = createRootRoute({
         },
         {
           rel: "preload",
-          href: "/dark.avif",
+          href: darkUrl,
           as: "image",
           type: "image/avif",
           media: "(prefers-color-scheme: dark)",
@@ -78,7 +78,7 @@ export const Route = createRootRoute({
         },
         {
           rel: "preload",
-          href: "/light.avif",
+          href: lightUrl,
           as: "image",
           type: "image/avif",
           media: "(prefers-color-scheme: light)",
