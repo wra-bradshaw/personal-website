@@ -46,7 +46,7 @@ function HomePage() {
             </FocusLink>
           </li>
           <li className="mb-1">
-            <FocusLink to="mailto:will.bradshaw50@gmail.com">Email</FocusLink>
+            <FocusLink to="mailto:will@bradshaw.page">Email</FocusLink>
           </li>
           <li className="mb-1">
             <FocusLink to="https://github.com/wra-bradshaw">GitHub</FocusLink>
