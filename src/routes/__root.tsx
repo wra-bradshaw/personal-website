@@ -5,6 +5,8 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { canonicalUrl } from "#/lib/utils";
 import junctionUrl from "../assets/Junction-regular.woff2?url";
 import stylesUrl from "../styles.css?url";
+import lightUrl from "../assets/light.avif";
+import darkUrl from "../assets/dark.avif";
 
 export const Route = createRootRoute({
   head: ({ matches }) => {
