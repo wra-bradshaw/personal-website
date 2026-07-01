@@ -1,6 +1,11 @@
 blockExoticSubdeps: true
 strictDepBuilds: true
 minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - typst-wasm
+  - "@typst-wasm/engine-wasm"
+  - "@typst-wasm/vite-plugin-typst"
+  - "@typst-wasm/fonts"
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200
 allowBuilds:

@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1";
     systems.url = "github:nix-systems/default";
   };
 
@@ -36,8 +36,8 @@
           default = pkgs.mkShell {
             packages = [
               pkgs.just
-              pkgs.nodejs_24
-              pkgs.pnpm_11
+              pkgs.nodejs_26
+              (pkgs.pnpm_11.override { nodejs = pkgs.nodejs_26; })
               pkgs.woff2
               pkgs.typst
               pkgs.cavif

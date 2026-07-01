@@ -8,12 +8,12 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.16.0",
+      "version": "26.3.0",
       "onFail": "error"
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "11.8.0",
+      "version": "11.5.3",
       "onFail": "error"
     }
   },
@@ -53,11 +53,15 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@typst-wasm/engine-wasm": "^0.2.0",
+    "@typst-wasm/vite-plugin-typst": "^0.2.0",
     "@vitejs/plugin-react": "^6.0.1",
+    "parse5": "8.0.1",
     "tailwindcss": "^4.3.1",
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "vitest": "^4.1.5",
-    "wrangler": "^4.105.0"
+    "wrangler": "^4.105.0",
+    "zod": "^4.4.3"
   }
 }
