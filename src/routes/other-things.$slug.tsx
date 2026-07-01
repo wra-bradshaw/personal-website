@@ -4,7 +4,6 @@ import type { AnyRouteMatch } from "@tanstack/react-router";
 import { FocusLink } from "#/components/FocusLink";
 import { things } from "#/other-things";
 import { Container } from "#/components/Container";
-import { canonicalUrl } from "#/lib/utils";
 
 type HeadResult = {
   links?: AnyRouteMatch["links"];

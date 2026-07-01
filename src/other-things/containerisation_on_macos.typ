@@ -1,5 +1,3 @@
-#import html
-
 #metadata((
   slug: "containerisation-on-macos",
 )) <frontmatter>
@@ -25,7 +23,7 @@ There had been a long standing #link("https://github.com/nix-darwin/nix-darwin/p
 
 #figure(
   html.img(
-    src: "/blog-assets/my-initial-comment.avif",
+    src: "./assets/my-initial-comment.png",
     alt: "GitHub timeline comment from contributor wra-bradshaw (September 28, 2025). The comment argues that Apple's containerization framework does not yet support the Docker Engine API, so Colima remains relevant. It mentions ongoing efforts to bridge Apple's framework with the Docker API, notes feature parity is still far away, and asks maintainers whether continuing a nix-darwin Colima integration PR is worthwhile.",
   ),
   caption: [My initial comment],
@@ -37,7 +35,7 @@ colima adds Docker contexts to your configuration so that you can create multipl
 
 #figure(
   html.img(
-    src: "/blog-assets/docker-context-support.avif",
+    src: "./assets/docker-context-support.png",
     alt: "GitHub timeline comment from contributor wra-bradshaw (December 17, 2025) linking to nix-community/home-manager#7913. The comment announces that the Home Manager PR has merged and says users can now enable Colima with services.colima.enable = true, ending with a smiley. The comment has two 🎉 reactions.",
   ),
   caption: [docker context support was added after some discussion with the maintainer],
@@ -47,7 +45,7 @@ Now the path was clear for my colima module. I #link("https://github.com/nix-com
 
 #figure(
   html.img(
-    src: "/blog-assets/final-comment.avif",
+    src: "./assets/final-comment.png",
     alt: "GitHub pull request timeline showing FriedrichAltheide approving the changes on October 15, 2025, followed by khaneliman merging commit 990e5ce into nix-community:master on the same day. The timeline indicates that 7 of 8 checks passed and includes buttons to view details or revert the merge.",
   ),
 )

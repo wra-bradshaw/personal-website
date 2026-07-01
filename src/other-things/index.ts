@@ -1,20 +1,35 @@
+import type { TypstCompiledModule } from "@typst-wasm/vite-plugin-typst";
+import * as z from "zod";
+
 export type OtherThing = {
-  slug: string;
+  slug?: string;
   title?: string;
   description?: string;
   body: string;
 };
 
-const typstModules = import.meta.glob<{
-  title: string | null;
-  description: string | null;
-  body: string;
-  frontmatter: { slug: string };
-}>("./*.typ", { query: "?parts", eager: true });
+const typstModules = import.meta.glob<TypstCompiledModule>("./*.typ", {
+  eager: true,
+});
 
-export const things: OtherThing[] = Object.values(typstModules).map((mod) => ({
-  slug: mod.frontmatter.slug,
-  title: mod.title ?? undefined,
-  description: mod.description ?? undefined,
-  body: mod.body,
-}));
+const Frontmatter = z.object({
+  slug: z.string(),
+});
+
+export const things: OtherThing[] = Object.values(typstModules).map((mod) => {
+  const m = mod;
+  const frontmatter = Frontmatter.parse(
+    m.metadata?.custom
+      .filter((metadata) => metadata.label == "frontmatter")
+      .reduce((acc, curr) => {
+        return { ...acc, ...curr };
+      }).value,
+  );
+
+  return {
+    slug: frontmatter.slug,
+    title: m.metadata?.title,
+    description: m.metadata?.description,
+    body: m.html,
+  };
+});
