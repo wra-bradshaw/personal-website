@@ -29,7 +29,6 @@ function HomePage() {
             Someone who enjoys fixing and building useful things.
           </DashListItem>
           <DashListItem className="mb-1">Optimistic.</DashListItem>
-          <DashListItem>A software developer.</DashListItem>
         </DashList>
         <p>
           You can find <Highlight>Will</Highlight> on:
