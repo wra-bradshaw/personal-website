@@ -24,7 +24,7 @@ function HomePage() {
           <Highlight>William Bradshaw</Highlight> is:
         </p>
         <DashList>
-          <DashListItem>A software developer.</DashListItem>
+          <DashListItem>A software engineer.</DashListItem>
           <DashListItem>
             Someone who enjoys fixing and building useful things.
           </DashListItem>
