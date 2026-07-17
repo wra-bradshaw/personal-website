@@ -10,6 +10,8 @@ export type OtherThing = {
 
 const typstModules = import.meta.glob<TypstCompiledModule>("./*.typ", {
   eager: true,
+  import: "default",
+  query: { typst: "html" },
 });
 
 const Frontmatter = z.object({

@@ -1,14 +1,4 @@
-declare module "*?parts" {
-  export const title: string | null;
-  export const description: string | null;
-  export const body: string;
-  const parts: {
-    title: string | null;
-    description: string | null;
-    body: string;
-  };
-  export default parts;
-}
+/// <reference types="@typst-wasm/vite-plugin-typst/client" />
 
 declare module "jsdom" {
   export class JSDOM {

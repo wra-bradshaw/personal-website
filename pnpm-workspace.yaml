@@ -12,5 +12,3 @@ allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
-patchedDependencies:
-  "@myriaddreamin/vite-plugin-typst": patches/@myriaddreamin__vite-plugin-typst.patch
